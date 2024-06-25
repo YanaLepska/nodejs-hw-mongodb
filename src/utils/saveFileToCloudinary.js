@@ -10,12 +10,6 @@ cloudinary.v2.config({
 });
 
 export const saveFileToCloudinary = async (file) => {
-    try {
-         const responce = await cloudinary.v2.uploader.upload(file.path);
+    const responce = await cloudinary.v2.uploader.upload(file.path);
     return responce.secure_url;
-    } catch (error) {
-       console.error('Error uploading file to Cloudinary:', error);
-    throw error;
-    }
-
 };
