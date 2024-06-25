@@ -27,3 +27,13 @@ export const loginUserSchema = Joi.object({
     'string.max': 'Username should have at most 15 characters',
   }),
 });
+
+export const resetEmailSchema = Joi.object({
+  email: Joi.string().email().required(),
+});
+
+
+export const resetPasswordSchema = Joi.object({
+  password: Joi.string().min(4).max(15).required(),
+  token: Joi.string().required(),
+});
