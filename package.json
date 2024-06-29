@@ -4,7 +4,10 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/index.js"
+    "start": "node ./src/index.js",
+    "build": "npm run build-docs",
+    "build-docs": "redocly bundle --ext json -o docs/swagger.json",
+    "preview-docs": "redocly preview-docs"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +15,7 @@
   "description": "nodejs-hw-mongodb",
   "devDependencies": {
     "@eslint/js": "^9.3.0",
+    "@redocly/cli": "^1.16.0",
     "eslint": "^9.3.0",
     "globals": "^15.3.0"
   },
@@ -31,6 +35,7 @@
     "nodemailer": "^6.9.14",
     "pino": "^9.1.0",
     "pino-http": "^10.1.0",
-    "pino-pretty": "^11.1.0"
+    "pino-pretty": "^11.1.0",
+    "swagger-ui-express": "^5.0.1"
   }
 }
