@@ -2,7 +2,7 @@ tags:
   - Contacts
 summary: Get list of contacts
 operationId: getContacts
-description: 'Get list of users with this endpoint'
+description: 'Get list of contacts with this endpoint'
 security:
   - bearerAuth: []
 parameters:
@@ -24,21 +24,27 @@ parameters:
     description: "All contact's fields can be mentioned. Default value - _id"
   - in: query
     name: sortOrder
+    description: "Default value - 'asc'"
     schema:
       type: string
       enum: ['asc', 'desc']
       example: 'asc'
   - in: query
+    name: userId
+    schema:
+      type: string
+      example: 65e4decdd286b30065d54af9
+  - in: query
     name: isFavourite
     schema:
       type: boolean
-      example: true
+      example: false
   - in: query
     name: contactType
     schema:
       type: string
       enum: ['personal', 'work', 'home']
-      example: home
+      example: personal
 responses:
   '200':
     description: Successfully found contacts!
@@ -71,7 +77,7 @@ responses:
                 data:
                   type: array
                   items:
-                    $ref: ..\..\components\schemas\contact.yaml
+                    $ref: '../../components/schemas/contact.yaml'
                 page:
                   type: number
                   example: 2
@@ -90,5 +96,7 @@ responses:
                 hasPreviousPage:
                   type: boolean
                   example: true
+  '404':
+    $ref: '../../components/responces/404.yaml'
   '401':
-    $ref: ..\..\components\responces\401.yaml
+    $ref: '../../components/responces/401.yaml'

@@ -16,6 +16,7 @@ const PORT = Number(process.env.PORT);
 export const setupServer = () => {
   const app = express();
 
+  app.use('/api-docs', swaggerDocs());
   app.use(express.json());
 
   app.use(cors());
@@ -39,7 +40,7 @@ export const setupServer = () => {
   app.use(router);
 
   app.use('/uploads', express.static(UPLOAD_DIR));
-  app.use('/api-docs', swaggerDocs());
+
 
   app.use('*', notFoundHandler);
 
