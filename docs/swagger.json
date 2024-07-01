@@ -11,9 +11,6 @@
   },
   "servers": [
     {
-      "url": "<http://localhost:5000>"
-    },
-    {
       "url": "<https://nodejs-hw-mongodb-7c96.onrender.com>"
     }
   ],
