@@ -14,8 +14,8 @@ tags:
     description: Auth operations.
   # теги, що ви будете використовувати
 servers:
-  - url: <http://localhost:5000>
-  # - url: #посилання на задеплоєний сайт
+  # - url: <http://localhost:5000>
+  - url: <https://nodejs-hw-mongodb-7c96.onrender.com>
 paths:
   /contacts:
     get:
