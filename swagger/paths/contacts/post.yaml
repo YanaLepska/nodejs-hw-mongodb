@@ -13,8 +13,6 @@ requestBody:
         required:
           - name
           - phoneNumber
-          - contactType
-          - userId
         properties:
           name:
             description: "Contact's name"
@@ -22,28 +20,28 @@ requestBody:
             example: 'John Doe'
           phoneNumber:
             description: "Contact's phone number"
-            type: string
-            example: '012-345-67-89'
+            type: number
+            example: '0123456789'
           email:
-            description: "Contact's personal email"
+            description: "Contact's email"
             type: string
-            example: 'testest@gmail.com'
-          isFavorite:
+            example: 'john@gmail.com'
+          isFavourite:
             description: 'Whether the contact is a favourite'
             type: boolean
             example: false
           contactType:
-            description: "Contact's personal type"
+            description: "Contact's type. Default value is 'personal'"
             type: string
-            enum: ['personal', 'home', 'work']
-          userId:
-            description: 'Authorisation ID'
-            type: string
-            example: 65e4decdd286b30065d54af9
+            enum: ['personal', 'work', 'home']
+            example: 'personal'
           photo:
             description: "Contact's photo"
             type: string
             format: binary
+      encoding:
+        photo:
+          contentType: image/*
 responses:
   '201':
     description: Creates a contact
