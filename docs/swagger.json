@@ -10,9 +10,7 @@
     "description": "This is a documentation of contacts app\n"
   },
   "servers": [
-    {
-      "url": "http://localhost:5000"
-    },
+
     {
       "url": "https://nodejs-hw-mongodb-7c96.onrender.com"
     }
